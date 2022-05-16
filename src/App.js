@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import Calculator from './Calculator';
+import Footer from './Footer';
 
 function App() {
    return (
@@ -10,6 +11,7 @@ function App() {
         <p> This is a little project calculator project that I made.  I hope you enjoy it! </p>
         <Calculator />
       </header>
+      <Footer />
     </div>
   );
 }

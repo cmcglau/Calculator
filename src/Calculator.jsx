@@ -1,7 +1,8 @@
 import React, {useState} from "react";
 import './App.css';
 const symbols = ["+","-","x","/","%","^", "1", "2", "3", "4",
-"5", "6", "7", "8" ,"9", "0","clr", "=", "(", ")", "."];
+"5", "6", "7", "8" ,"9", "0","clr", "=", "(", ")", ".","log",
+"tan","sin","cos"];
 
 
 const Calculator = () => {
@@ -12,13 +13,13 @@ const Calculator = () => {
     const [equalFlag, setEqualflag] = React.useState(0);
     
     return (
-        <div>
+        <div className="cal">
             <h2> {equationStr} </h2>
             {/*<h2> Equation: {equation} </h2>*/}
             <h2> {comp} </h2>
             <p> {symb} </p>
             <p> Equal Flag: {equalFlag} </p>
-            <div class = "wrapper">
+            <div className = "wrapper">
                 {symbols.map((symbol) => {
                 const handleSymb = () => {
                 // If Clear, then clear everything
