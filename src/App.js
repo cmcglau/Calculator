@@ -2,106 +2,13 @@ import React, {useState} from 'react';
 import './App.css';
 import Calculator from './Calculator';
 
-const symbols = ["+","-","x","/","%","^", "1", "2", "3", "4",
-"5", "6", "7", "8" ,"9", "0","clr", "=", "(", ")", "."];
-
 function App() {
-  const [symb, setSymb] = React.useState(" ");
-  const [equation, setEquation] = React.useState("");
-  const [equationStr, setEquationStr] = React.useState("");
-  const [comp, setComp] = React.useState(0);
-  const [equalFlag, setEqualflag] = React.useState(0);
-  return (
+   return (
     <div className="App">
       <header className="App-header">
         <h1>My Calculator App</h1>
-        {/*<h2> Equation: {equation}</h2>*/}
-        <h2> {equationStr}</h2>
-        <h2> {comp} </h2>
-        <p> Current Symbol: {symb} </p>
-        <div class="wrapper">
-          {symbols.map((symbol) => {
-            const handleSymb = () => {
-              // If Clear, then clear everything
-              if (symbol == "clr") {
-                setSymb(0);
-                setEquation(0);
-                setComp(0);
-                setEqualflag(0);
-                setEquationStr(0);
-              }
-              // If equal, then compute calcuation and curr equation
-              else if (symbol == "=") {
-                setSymb(0);
-                setComp(eval(equation));
-                setEquation(equation + symbol);
-                setEquationStr(equationStr + symbol);
-                setEqualflag(1);
-              }
-              // If the next sym is a num and we just hit equal, then reset and replace equation with the new num
-              else if (!isNaN(parseInt(symbol)) && equalFlag) {
-                setEqualflag(0);
-                setEquation(symbol);
-                setEquationStr(symbol);
-                setSymb(symbol);
-                setComp(0);
-              }
-              // If Equation is 0 and the next symbol is a num, then replace 0 with the num
-              else if (parseInt(equation) == 0 && parseInt(symbol)) {
-                setSymb(symbol);
-                setEquation(symbol);
-                setEquationStr(symbol);
-                setEqualflag(0);
-                setComp(0);
-              }
-              // If the next sym is not a num and we just hit equal, then replace equation with the equated num plus non-int sym
-              else if (isNaN(parseInt(symbol)) && equalFlag) {
-                if (symbol == "x") {
-                  setSymb("*");
-                  setEquation(comp + "*");
-                }
-                else if (symbol == "^") {
-                  setSymb("^");
-                  setEquation(comp + "**");
-                }
-                else {
-                  setSymb(symbol);
-                  setEquation(comp + symbol);
-                }
-                setEquationStr(comp + symbol);
-                setEqualflag(0);
-                setComp(0);
-              }
-              else if (isNaN(parseInt(symbol)) && !equalFlag) {
-                if (symbol == "x") {
-                  setSymb("x");
-                  setEquation(equation + "*");
-                }
-                else if (symbol == "^") {
-                  setSymb("^");
-                  setEquation(equation + "**");
-                }
-                else {
-                  setEquation(comp + symbol);
-                  setSymb(symbol);
-                }
-                setEquationStr(equationStr + symbol);
-                setComp(0);
-              }
-              else {
-                setSymb(symbol);
-                setEquation(equation + symbol);
-                setEquationStr(equationStr + symbol);
-                setEqualflag(0);
-                setComp(0);
-              }
-              
-            };
-            return (
-              <button onClick={handleSymb} class="buttonStyle"> {symbol} </button>
-            );
-          })}
-        </div>
+        <p> This is a little project calculator project that I made.  I hope you enjoy it! </p>
+        <Calculator />
       </header>
     </div>
   );
