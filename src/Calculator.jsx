@@ -17,7 +17,6 @@ const symbols = [
 ];
 
 
-
 const Calculator = () => {
     const [symb, setSymb] = React.useState(" ");
     const [equation, setEquation] = React.useState("");
@@ -32,6 +31,7 @@ const Calculator = () => {
             <h2> {comp} </h2>
             <p> {symb} </p>
             <p> Equal Flag: {equalFlag} </p>
+
             <div className = "wrapper">
                 {symbols.map((symbol) => {
                 const handleSymb = () => {

@@ -51,6 +51,7 @@
   max-width: 500px;
 }
 
+
 .buttonStyle {
   background-color: darkblue;
   font-size: 18px;
@@ -60,10 +61,71 @@
   transition-duration: 0.4s;
 }
 
-.buttonStyle:hover {
+.wrapper .buttonStyle:nth-child(9) {
+  background-color: gray;
+}
+.wrapper .buttonStyle:nth-child(10) {
+  background-color: gray;
+}
+.wrapper .buttonStyle:nth-child(11) {
+  background-color: gray;
+}
+.wrapper .buttonStyle:nth-child(15) {
+  background-color: gray;
+}
+.wrapper .buttonStyle:nth-child(16) {
+  background-color: gray;
+}
+.wrapper .buttonStyle:nth-child(17) {
+  background-color: gray;
+}
+.wrapper .buttonStyle:nth-child(21) {
+  background-color: gray;
+}
+.wrapper .buttonStyle:nth-child(22) {
+  background-color: gray;
+}
+.wrapper .buttonStyle:nth-child(23) {
+  background-color: gray;
+}
+.wrapper .buttonStyle:nth-child(28) {
+  background-color: gray;
+}
+
+.wrapper .buttonStyle:nth-child(9):hover {
+  background-color: lightblue;
+}
+.wrapper .buttonStyle:nth-child(10):hover {
+  background-color: lightblue;
+}
+.wrapper .buttonStyle:nth-child(11):hover {
+  background-color: lightblue;
+}
+.wrapper .buttonStyle:nth-child(15):hover {
+  background-color: lightblue;
+}
+.wrapper .buttonStyle:nth-child(16):hover {
+  background-color: lightblue;
+}
+.wrapper .buttonStyle:nth-child(17):hover {
+  background-color: lightblue;
+}
+.wrapper .buttonStyle:nth-child(21):hover {
+  background-color: lightblue;
+}
+.wrapper .buttonStyle:nth-child(22):hover {
+  background-color: lightblue;
+}
+.wrapper .buttonStyle:nth-child(23):hover {
+  background-color: lightblue;
+}
+.wrapper .buttonStyle:nth-child(28):hover {
   background-color: lightblue;
 }
 
+.buttonStyle:hover {
+  background-color: lightblue;
+}
 
 
 @keyframes App-logo-spin {
