@@ -13,24 +13,38 @@ const symbols = [
     "e",  "sin", "1", "2",  "3", "x",
     "^",  "cos", "4", "5",  "6", "-", 
     "ln", "tan", "7", "8",  "9", "+", 
-    "!",  "%"  , "/", "0",  ".", "="
+    "|x|",  "%"  , "/", "0",  ".", "="
 ];
-
 
 const Calculator = () => {
     const [symb, setSymb] = React.useState(" ");
     const [equation, setEquation] = React.useState("");
     const [equationStr, setEquationStr] = React.useState("");
     const [comp, setComp] = React.useState(0);
+    const [compString, setCompString] = React.useState("");
     const [equalFlag, setEqualflag] = React.useState(0);
-    
+
+    const resizeText = (element) => {
+        var elements = document.getElementByclassName(element);
+        var offsetWidth = document.getElementByclassName(element).offsetWidth;
+        var i = 12;
+        console.log("clientWidth is " + offsetWidth);
+        while (offsetWidth > 10000) {
+            elements.style.fontSize = i - 1;
+        }
+    }
+
     return (
         <div className="cal">
-            <h2> {equationStr} </h2>
-            <h2> Equation: {equation} </h2>
-            <h2> {comp} </h2>
-            <p> {symb} </p>
-            <p> Equal Flag: {equalFlag} </p>
+            <h2 id="calHeader"> {equationStr} &nbsp; &nbsp; &nbsp; 
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {compString}</h2>
+            <h3>  </h3>
+            {/*<p> {symb} </p>*/}
+            {/*<h2> Equation: {equation} </h2>*/}
+            {/*<h2> {comp} </h2>*/}
+            {/*<p> Equal Flag: {equalFlag} </p>*/}
+
+            {/*resizeText("cal")*/}
 
             <div className = "wrapper">
                 {symbols.map((symbol) => {
@@ -42,6 +56,7 @@ const Calculator = () => {
                     setComp(0);
                     setEqualflag(1);
                     setEquationStr(0);
+                    setCompString("");
                 }
                 // If equal, then compute calcuation and curr equation
                 else if (symbol === "=") {
@@ -49,6 +64,7 @@ const Calculator = () => {
                     setComp(eval(equation));
                     setEquation(equation + symbol);
                     setEquationStr(equationStr + symbol);
+                    setCompString(eval(equation).toString());
                     setEqualflag(1);
                 }
                 // If the next sym is not a num and we just hit equal, then replace equation with the equated num plus non-int sym
@@ -87,6 +103,11 @@ const Calculator = () => {
                         setSymb("e");
                         setEquation(comp + "Math.E");
                         setEquationStr(comp + "e");
+                    }
+                    else if (symbol === "|x|") {
+                        setSymb("|x|");
+                        setEquation(Math.abs(comp));
+                        setEquationStr("|" + comp + "|");
                     }
                     else {
                         setSymb(symbol);
@@ -131,12 +152,17 @@ const Calculator = () => {
                     else if (symbol === "e") {
                         setSymb("e");
                         setEquation(equation + "Math.E");
-                        setEquationStr(equation + "e");
+                        setEquationStr(equationStr + "e");
                     }
                     else if (symbol === "π") {
                         setSymb("π");
                         setEquation(equation + "Math.PI");
-                        setEquationStr(equation + "π");
+                        setEquationStr(equationStr + "π");
+                    }
+                    else if (symbol === "|x|") {
+                        setSymb("|x|");
+                        setEquation("|" + equation + "|");
+                        setEquationStr("|" + equationStr + "|");
                     }
                     else {
                         setEquation(equation + symbol);
@@ -151,6 +177,7 @@ const Calculator = () => {
                     setEquation(symbol);
                     setEquationStr(symbol);
                     setSymb(symbol);
+                    setCompString("");
                     setComp(0);
                 }
                 else {

@@ -26,6 +26,8 @@
 
 .cal {
   margin-bottom: 10vh;
+  background-color: steelblue;
+  width: clamp(200px, 50% + 20px, 500px);
 }
 
 .footer {
@@ -41,6 +43,14 @@
 
 .App-link {
   color: #61dafb;
+}
+
+.cal h2 {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  padding: 3vh;
+  margin-top: 0vh;
 }
 
 .wrapper {

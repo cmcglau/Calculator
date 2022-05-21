@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>My Calculator App</h1>
-        <p> This is a little project calculator project that I made.  I hope you enjoy it! </p>
+        <p> This is a little calculator project that I made.  I hope you enjoy it! </p>
         <Calculator />
       </header>
       <Footer />
