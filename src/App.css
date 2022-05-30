@@ -27,7 +27,9 @@
 .cal {
   margin-bottom: 10vh;
   background-color: steelblue;
-  width: clamp(200px, 50% + 20px, 500px);
+  width: 90vw;
+  max-width: 500px;
+  padding: 1vw;
 }
 
 .footer {
@@ -56,17 +58,17 @@
 .wrapper {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  gap: 12px;
-  grid-auto-rows: minmax(12px, auto);
-  max-width: 500px;
+  gap: 2vw;
+  grid-auto-rows: minmax(2vw, auto);
 }
 
 
 .buttonStyle {
   background-color: darkblue;
-  font-size: 18px;
-  width: 50px;
-  height: 50px;
+  font-size: 2vh;
+  width: 10vw;
+  max-width: 50px;
+  height: 7vh;
   color: white;
   transition-duration: 0.4s;
 }
